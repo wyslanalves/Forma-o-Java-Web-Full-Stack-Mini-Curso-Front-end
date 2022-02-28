@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Mini Curso Front-end</title>
+<style type="text/css">
+form {
+	width: 50%;
+	margin: auto auto;
+}
+
+.box {
+	display: flex;
+	flex-direction: column;
+}
+
+input {
+	height: 20px;
+}
+
+.salva {
+	height: 30px;
+	background: white;
+	margin-top: 25px;
+}
+
+.salva:hover {
+	background: black;
+	color: white;
+	cursor: pointer;
+}
+</style>
+</head>
+<body>
+	<h1>Mini Curso Front-end</h1>
+	<form action="salvarUsuario" method="post" onsubmit="return validaDados()? true : false">
+
+		<fieldset class="box">
+			<legend>Formulario:</legend>
+			<label>Nome:</label> 
+			<input type="text" id="nome" name="nome">
+
+			<label>Login:</label> 
+			<input type="text" id="login" name="login">
+
+			<label>Senha:</label> 
+			<input type="password" id="senha" name="senha">
+
+			<input type="submit" value="Salva" class="salva" >
+
+		</fieldset>
+
+	</form>
+	<script type="text/javascript">
+	
+	function validaDados() {
+		let nome = document.getElementById('nome').value;
+		let login = document.getElementById('login').value;
+		let senha = document.getElementById('senha').velue;
+		
+		if(nome == ''){
+			alert("Informe o nome");
+			return false;
+		}else if(login == ''){
+			alert("Informe o login");
+			return false;
+		}else if(senha == ''){
+			alert("Informe o senha");
+			return false;
+		}
+		
+		return true;
+	}
+	</script>
+</body>
+</html>
